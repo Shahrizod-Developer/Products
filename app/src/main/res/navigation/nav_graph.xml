@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeScreen">
+
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.smartmuslim.wordsquiz.ui.HomeScreen"
+        android:label="home_screen"
+        tools:layout="@layout/home_screen">
+        <action
+            android:id="@+id/action_homeScreen_to_listScreen"
+            app:destination="@id/listScreen"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/listScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeScreen_to_gameScreen"
+            app:destination="@id/gameScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_addScreen"
+            app:destination="@id/addScreen"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/addScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addScreen"
+        android:name="uz.smartmuslim.wordsquiz.ui.AddScreen"
+        android:label="add_screen"
+        tools:layout="@layout/add_screen" />
+    <fragment
+        android:id="@+id/gameScreen"
+        android:name="uz.smartmuslim.wordsquiz.ui.GameScreen"
+        android:label="game_screen"
+        tools:layout="@layout/game_screen" />
+    <fragment
+        android:id="@+id/listScreen"
+        android:name="uz.smartmuslim.wordsquiz.ui.ListScreen"
+        android:label="list_screen"
+        tools:layout="@layout/list_screen">
+        <action
+            android:id="@+id/action_listScreen_to_addScreen"
+            app:destination="@id/addScreen"
+            app:enterAnim="@anim/animation_from_bottom"
+            app:exitAnim="@anim/animation_leave_from_top"
+            app:popEnterAnim="@anim/animation_from_top"
+            app:popExitAnim="@anim/animation_leave_from_bottom" />
+        <action
+            android:id="@+id/action_listScreen_to_editScreen"
+            app:destination="@id/editScreen"
+            app:enterAnim="@anim/animation_from_bottom"
+            app:exitAnim="@anim/animation_leave_from_top"
+            app:popEnterAnim="@anim/animation_from_top"
+            app:popExitAnim="@anim/animation_leave_from_bottom" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editScreen"
+        android:name="uz.smartmuslim.wordsquiz.ui.EditScreen"
+        android:label="@string/edit_task"
+        tools:layout="@layout/edit_screen">
+        <argument
+            android:name="word"
+            app:argType="uz.smartmuslim.wordsquiz.data.source.local.entity.Word"
+            app:nullable="true" />
+    </fragment>
+</navigation>

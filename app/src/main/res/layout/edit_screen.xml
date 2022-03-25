@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="word"
+            type="uz.smartmuslim.wordsquiz.data.source.local.entity.Word" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.EditScreen">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/cl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdp"
+            android:background="@drawable/back_style_card"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+
+                android:id="@+id/back"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.7"
+                app:tint="@color/white" />
+
+            <TextView
+
+                android:id="@+id/list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/lato"
+                android:text="Add Word"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/back"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.7" />
+
+
+            <Button
+
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:backgroundTint="#0E2B42"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.7" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl">
+
+
+            <TextView
+
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/lato"
+                android:text="English"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/word_engg"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:hint="So'zning inglizcha ma'nosi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/wordEng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:text="@{word.wordEng}"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/lato"
+                android:text="O'zbekcha"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/word_engg"
+                app:layout_constraintVertical_bias="0" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/word_uzz"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:hint="So'zning o'zbekcha ma'nosi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/wordUz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start"
+                    android:inputType="textCapSentences"
+                    android:text="@{word.wordUz}"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/lato"
+                android:text="Boshqa"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/word_uzz"
+                app:layout_constraintVertical_bias="0" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/word_othh"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:hint="So'zning boshqa tildagi ma'nosi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/wordOth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start"
+                    android:inputType="textCapSentences"
+                    android:text="@{word.wordOth}"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
