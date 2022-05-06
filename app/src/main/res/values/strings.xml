@@ -1,25 +1,38 @@
-<resources>
-    <string name="app_name">Words Quiz</string>
-    <string name="empty">empty</string>
-    <string name="delete">delete</string>
-    <string name="edit_task">Edit Task</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Texnik qismlar</string>
+    <string name="edit_task">Texnik qism ma\'lumotlarini yangilash</string>
+    <string name="empty">bo\'sh</string>
+    <string name="delete">o\'chirish</string>
+    <string name="edit_product">Ma\'lumotlarni yangilash</string>
     <string name="no_data">No Data</string>
-    <string name="add_task">Add Word</string>
-    <string name="title">Title</string>
-    <string name="description">Description..</string>
-    <string name="submit">Submit</string>
-    <string name="update">Update</string>
-    <string name="fill_all_fields">Please fill out all fields</string>
-    <string name="total_task">Total Word</string>
-    <string name="completed">Completed</string>
-    <string name="delete_checked_lists">Delete Checked Lists</string>
-    <string name="all_delete_are_you_sure">All checked lists will be deleted. Are you sure?</string>
+    <string name="add_task">Texnik qism qo\'shish</string>
+    <string name="barcode">Shtrix Raqami</string>
+    <string name="productName">Texnik qism nomi</string>
+    <string name="submit">Saqlash</string>
+    <string name="update">Yangilash</string>
+    <string name="fill_all_fields">Iltimos, barcha maydonlarni to\'ldiring</string>
+    <string name="total_task">Texnik qismlar soni</string>
+    <string name="completed">Tanlangan mahsulotlar soni</string>
+    <!--    <string name="delete_checked_lists">Belgilangan mahsulotlarni o\'chirish</string>-->
+    <!--    <string name="all_delete_are_you_sure" tools:ignore="StringEscaping">Barcha belgilangan mahsulotlar \o'chiriladi, Rostdan ham o'chirasizmi ?</string>-->
     <string name="yes">Yes</string>
-    <string name="toast_all_deleted">All checked lists have been deleted.</string>
+    <!--    <string name="toast_all_deleted">Barcha belgilangan ro\'yxatlar o'chirildi</string>-->
     <string name="no">No</string>
     <string name="clear_lists">Clear Lists</string>
-    <string name="all_list_deleted_warning">All lists will be deleted. Are you sure?</string>
-    <string name="all_deleted_add_todo">All lists have been deleted. Add your Word!</string>
+    <!--    <string name="all_list_deleted_warning">Barcha mahsulotlar o\'chiriladi. Ishonchingiz komilmi?</string>-->
+    <!--    <string name="all_deleted_add_todo">Barcha mahsulotlar oʻchirildi. Texnik qismlar qo\'shing!</string>-->
+    <string name="productCount">Texnik qism soni</string>
+    <string name="productArriveCost">Kelgan narxi</string>
+    <string name="productPercent">Qo\'yilgan foiz</string>
+    <string name="productSaleCost">Sotilish narxi</string>
+    <string name="productTerm">Muddati</string>
+    <string name="productFirm">Firmasi</string>
+    <string name="productArriveTerm">Kelgan sanasi</string>
+    <string name="create_barcde">Shtrix kod yaratish</string>
+    <string name="import_contacts">Import Contacts</string>
+    <string name="export_contacts">Export Into Excel</string>
+    <string name="read_excel_data">Read From Excel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--    <string name="text_exception"></string>-->
 </resources>

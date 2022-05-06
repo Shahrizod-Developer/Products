@@ -39,7 +39,14 @@
         android:id="@+id/addScreen"
         android:name="uz.smartmuslim.wordsquiz.ui.AddScreen"
         android:label="add_screen"
-        tools:layout="@layout/add_screen" />
+        tools:layout="@layout/add_screen" >
+        <action
+            android:id="@+id/action_addScreen_to_listScreen"
+            app:destination="@id/listScreen"
+            app:enterAnim="@anim/animation_leave_from_bottom"
+            app:exitAnim="@anim/animation_from_top"
+            app:popUpTo="@id/homeScreen" />
+    </fragment>
     <fragment
         android:id="@+id/gameScreen"
         android:name="uz.smartmuslim.wordsquiz.ui.GameScreen"
@@ -64,6 +71,12 @@
             app:exitAnim="@anim/animation_leave_from_top"
             app:popEnterAnim="@anim/animation_from_top"
             app:popExitAnim="@anim/animation_leave_from_bottom" />
+        <action
+            android:id="@+id/action_listScreen_to_detailScreen"
+            app:destination="@id/detailScreen"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/listScreen" />
 
     </fragment>
 
@@ -73,8 +86,13 @@
         android:label="@string/edit_task"
         tools:layout="@layout/edit_screen">
         <argument
-            android:name="word"
-            app:argType="uz.smartmuslim.wordsquiz.data.source.local.entity.Word"
+            android:name="product"
+            app:argType="uz.smartmuslim.wordsquiz.data.source.local.entity.Product"
             app:nullable="true" />
     </fragment>
+    <fragment
+        android:id="@+id/detailScreen"
+        android:name="uz.smartmuslim.wordsquiz.ui.DetailScreen"
+        android:label="detail_screen"
+        tools:layout="@layout/detail_screen" />
 </navigation>

@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_15sdp"
             android:fontFamily="@font/lato"
-            android:text="Add Word"
+            android:text="@string/add_task"
             android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
@@ -62,7 +62,7 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:text="Save"
+            android:text="Saqlash"
             android:textAllCaps="false"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -78,142 +78,297 @@
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl">
+        app:layout_constraintTop_toBottomOf="@id/cl"
+        app:layout_constraintVertical_bias="0">
 
+        <androidx.core.widget.NestedScrollView
 
-        <TextView
-
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/lato"
-            android:text="English"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0" />
+            app:layout_constraintVertical_bias="0">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/word_engg"
-            style="@style/TextInputLayoutStyle"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:background="@color/white"
-            android:hint="The English meaning of the word"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text1">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/wordEng"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:background="@color/colorBackground"
                 android:padding="@dimen/_10sdp"
-                android:textColorHint="@color/black" />
+                tools:context=".ui.add.AddFragment">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <Button
+
+                    android:id="@+id/createBarcode"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:backgroundTint="#113647"
+                    android:text="@string/create_barcde"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0" />
+
+                <ImageView
+
+                    android:id="@+id/barcodeImage"
+                    android:layout_width="242dp"
+                    android:layout_height="71dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:contentDescription="TO DO"
+                    android:src="@drawable/barcode"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/createBarcode"
+                    app:layout_constraintVertical_bias="0" />
+
+                <TextView
+                    android:id="@+id/textInputBarcodeNumber"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textSize="@dimen/_16sdp"
+                    android:fontFamily="serif-monospace"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barcodeImage"
+                    app:layout_constraintVertical_bias="0">
+
+                </TextView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputProductName"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:hint="@string/productName"
+                    android:textColorHint="#A3A1A6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputBarcodeNumber">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/productName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:inputType="text"
+                        android:textColor="@color/colorText" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputProductCount"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:hint="@string/productCount"
+                    android:textColorHint="#A3A1A6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputProductName">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/productCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:inputType="number"
+                        android:textColor="@color/colorText" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputProductArriveCost"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:hint="@string/productArriveCost"
+                    android:textColorHint="#A3A1A6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputProductCount">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/productArriveCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:inputType="numberSigned"
+                        android:textColor="@color/colorText" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputProductPercent"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:hint="@string/productPercent"
+                    android:textColorHint="#A3A1A6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputProductArriveCost">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/productPercent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:inputType="numberSigned"
+                        android:textColor="@color/colorText" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/textInputProductSaleCost"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/back_style"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputProductPercent">
+
+                    <LinearLayout
+
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+
+                            android:id="@+id/saleCost"
+                            android:textSize="@dimen/_13sdp"
+                            android:hint="@string/productSaleCost"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
 
 
-        <TextView
+                </com.google.android.material.card.MaterialCardView>
 
-            android:id="@+id/text2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/lato"
-            android:text="Uzbek"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/word_engg"
-            app:layout_constraintVertical_bias="0" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputProductTerm"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:hint="@string/productTerm"
+                    android:textColorHint="#A3A1A6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputProductSaleCost">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/word_uzz"
-            style="@style/TextInputLayoutStyle"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:background="@color/white"
-            android:hint="The Uzbek meaning of the word"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text2">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/productTerm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:inputType="text"
+                        android:textColor="@color/colorText" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/wordUz"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:inputType="text"
-                android:padding="@dimen/_10sdp"
-                android:textColorHint="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputProductFirm"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:hint="@string/productFirm"
+                    android:textColorHint="#A3A1A6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputProductTerm">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/productFirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:inputType="text"
+                        android:textColor="@color/colorText" />
 
-        <TextView
+                </com.google.android.material.textfield.TextInputLayout>
 
-            android:id="@+id/text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/lato"
-            android:text="Other language"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/word_uzz"
-            app:layout_constraintVertical_bias="0" />
+                <com.google.android.material.card.MaterialCardView
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/word_othh"
-            style="@style/TextInputLayoutStyle"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:background="@color/white"
-            android:hint="The meaning of the word in another language"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text3">
+                    android:id="@+id/textInputProductArriveTerm"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputProductFirm"
+                    app:layout_constraintVertical_bias="0">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/wordOth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:inputType="text"
-                android:padding="@dimen/_10sdp"
-                android:textColorHint="@color/black" />
+                    <LinearLayout
 
-        </com.google.android.material.textfield.TextInputLayout>
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
+                        <TextView
+
+                            android:id="@+id/productArriveTerm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/productArriveTerm"
+                            android:inputType="text"
+                            android:textColor="#A18AC0"
+                            android:textColorHint="#A3A1A6"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    app:layout_constraintTop_toBottomOf="@id/textInputProductArriveTerm" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

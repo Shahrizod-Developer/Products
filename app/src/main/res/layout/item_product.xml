@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="product"
+            type="uz.smartmuslim.wordsquiz.data.source.local.entity.Product" />
+
+        <variable
+            name="viewModel"
+            type="uz.smartmuslim.wordsquiz.viewmodel.ProductViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorCard"
+            app:cardCornerRadius="8dp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/colorBorder"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <CheckBox
+                    android:id="@+id/checkbox_product"
+                    product="@{product}"
+                    vm="@{viewModel}"
+                    app:layout_constraintVertical_bias="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorText"
+                    android:text="@null"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/edit_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    app:layout_constraintVertical_bias="0"
+                    android:contentDescription="@string/delete"
+                    android:focusable="true"
+                    android:rotation="90"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:goToEdit="@{product}"
+                    app:layout_constraintBottom_toTopOf="@+id/title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/checkbox_product"
+                    app:srcCompat="@drawable/ic_edit" />
+
+                <ImageView
+
+                    android:id="@+id/barcodeImage"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    app:layout_constraintVertical_bias="0"
+                    android:contentDescription="@string/delete"
+                    android:focusable="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/title"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/checkbox_product"
+                    app:srcCompat="@drawable/ic_edit" />
+
+                <TextView
+
+                    android:id="@+id/barcode"
+                    app:layout_constraintTop_toBottomOf="@id/barcodeImage"
+                    app:layout_constraintLeft_toLeftOf="@id/barcodeImage"
+                    app:layout_constraintRight_toRightOf="@id/barcodeImage"
+                    app:layout_constraintVertical_bias="0"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="serif-monospace"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textStyle="normal"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/textTitle"
+                    android:layout_width="0dp"
+                    android:maxLines="2"
+                    android:textSize="@dimen/_14sdp"
+                    android:ellipsize="end"
+                    app:layout_constraintVertical_bias="0"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:strikeThrough="@{product.checked}"
+                    android:text="@{product.name}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/barcode" />
+
+                <TextView
+                    android:id="@+id/description"
+                    style="@style/textBase"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintVertical_bias="0"
+                    android:maxLines="10"
+                    android:strikeThrough="@{product.checked}"
+                    android:text="@{product.saleCost}"
+                    app:layout_constraintEnd_toEndOf="@+id/title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</layout>

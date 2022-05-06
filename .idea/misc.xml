@@ -16,6 +16,21 @@
         <entry key="..\:/E/WordsQuiz/app/src/main/res/layout/list_screen.xml" value="0.22" />
         <entry key="..\:/E/WordsQuiz/app/src/main/res/layout/setting_screen.xml" value="0.2" />
         <entry key="..\:/E/WordsQuiz/app/src/main/res/menu/list_menu.xml" value="0.22447916666666667" />
+        <entry key="..\:/SaveWord/app/src/main/res/drawable/back_style.xml" value="0.1535" />
+        <entry key="..\:/SaveWord/app/src/main/res/drawable/back_style_searching.xml" value="0.1775" />
+        <entry key="..\:/SaveWord/app/src/main/res/drawable/ic_import_contact.xml" value="0.1535" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/add_screen.xml" value="0.25" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/date_picker_dialog.xml" value="0.2" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/detail_screen.xml" value="0.1859375" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/edit_screen.xml" value="0.2" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/export_screen.xml" value="0.2" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/game_screen.xml" value="0.2" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/home_screen.xml" value="0.25" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/item_product.xml" value="0.2" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/item_word.xml" value="0.1" />
+        <entry key="..\:/SaveWord/app/src/main/res/layout/list_screen.xml" value="0.2" />
+        <entry key="..\:/SaveWord/app/src/main/res/menu/list_menu.xml" value="0.2" />
+        <entry key="..\:/SaveWord/app/src/main/res/menu/sort_menu.xml" value="0.2" />
       </map>
     </option>
   </component>

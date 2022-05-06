@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/sortByBarcode"
+        android:title="Shtrix raqam orqali sarash"/>
+
+    <item android:id="@+id/sortByName"
+        android:title="Nomi orqali sarash"/>
+
+    <item android:id="@+id/sortCost"
+        android:title="Sotilish narxi orqali sarash"/>
+
+</menu>
